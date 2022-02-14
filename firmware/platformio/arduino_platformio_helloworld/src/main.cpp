@@ -3,6 +3,8 @@
 const int BUTTON_PIN = 4;    // Define pin the button is connected to
 const int ON_BOARD_LED = 2;  // Define pin the on-board LED is connected to
 const int RGB_G_PIN = 12;    // RGB Green LED
+const int RGB_R_PIN = 15;    // RGB Green LED
+const int RGB_B_PIN = 13;    // RGB Green LED
 const int LDR_PIN = A0;      // Define the analog pin the LDR is connected to
 
 void setup() {
@@ -25,7 +27,10 @@ void loop() {
   int lightIntensity;
 
   lightIntensity = analogRead(LDR_PIN);  // Read the light intensity
-  analogWrite( RGB_G_PIN, map(lightIntensity, 40, 1023, 0, 1023));
+  // analogWrite( RGB_G_PIN, map(lightIntensity, 40, 1023, 0, 1023));
+  analogWrite( RGB_G_PIN, map(lightIntensity, 40, 1023,  0, 256));
+  analogWrite( RGB_R_PIN, map(lightIntensity, 40, 1023,  0, 256));
+  analogWrite( RGB_B_PIN, map(lightIntensity, 40, 1023,  0, 256));
   btn_Status = digitalRead (BUTTON_PIN);  // Check status of button
   if (btn_Status == LOW) {                // Button pushed, so do something
     Serial.print("Light Intensity Reading: ");
