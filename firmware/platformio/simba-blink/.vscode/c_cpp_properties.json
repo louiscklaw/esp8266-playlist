@@ -1,0 +1,89 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "c:/Users/logic/_workspace/esp8266-tryout/firmware/platformio/simba-blink/include",
+                "c:/Users/logic/_workspace/esp8266-tryout/firmware/platformio/simba-blink/src",
+                "C:/Users/logic/.platformio/packages/framework-simba/build/esp12e/gen",
+                "C:/Users/logic/.platformio/packages/framework-simba/src",
+                "C:/Users/logic/.platformio/packages/framework-simba/src/boards/esp12e",
+                "C:/Users/logic/.platformio/packages/framework-simba/src/mcus/esp8266",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/extra_include",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/espressif",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/lwip",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/compat",
+                "C:/Users/logic/.platformio/packages/framework-simba/src/drivers/ports/esp",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/mbedtls/include",
+                "C:/Users/logic/.platformio/packages/framework-simba/src/kernel/ports/esp/gnu",
+                "C:/Users/logic/.platformio/packages/framework-simba/src/oam/ports/esp",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/spiffs-0.3.5/src",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/atto",
+                "C:/Users/logic/.platformio/packages/framework-simba/3pp/atto/curses",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "c:/Users/logic/_workspace/esp8266-tryout/firmware/platformio/simba-blink/include",
+                    "c:/Users/logic/_workspace/esp8266-tryout/firmware/platformio/simba-blink/src",
+                    "C:/Users/logic/.platformio/packages/framework-simba/build/esp12e/gen",
+                    "C:/Users/logic/.platformio/packages/framework-simba/src",
+                    "C:/Users/logic/.platformio/packages/framework-simba/src/boards/esp12e",
+                    "C:/Users/logic/.platformio/packages/framework-simba/src/mcus/esp8266",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/extra_include",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/espressif",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/lwip",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/compat",
+                    "C:/Users/logic/.platformio/packages/framework-simba/src/drivers/ports/esp",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/mbedtls/include",
+                    "C:/Users/logic/.platformio/packages/framework-simba/src/kernel/ports/esp/gnu",
+                    "C:/Users/logic/.platformio/packages/framework-simba/src/oam/ports/esp",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/spiffs-0.3.5/src",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/atto",
+                    "C:/Users/logic/.platformio/packages/framework-simba/3pp/atto/curses",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=50205",
+                "ESP8266",
+                "ARDUINO_ARCH_ESP8266",
+                "ARDUINO_ESP8266_ESP12",
+                "F_CPU=80000000L",
+                "ARCH_ESP",
+                "FAMILY_ESP",
+                "MCU_ESP8266",
+                "BOARD_ESP12E",
+                "VERSION=15.0.3",
+                "MBEDTLS_USER_CONFIG_FILE=\"\"mbedtls/user_config.h\"\"",
+                "ICACHE_FLASH",
+                "__STRICT_ANSI__",
+                "__ets__",
+                ""
+            ],
+            "cStandard": "c99",
+            "cppStandard": "c++11",
+            "compilerPath": "C:/Users/logic/.platformio/packages/toolchain-xtensa@1.40802.0/bin/xtensa-lx106-elf-gcc.exe",
+            "compilerArgs": [
+                "-mlongcalls",
+                "-mtext-section-literals",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
