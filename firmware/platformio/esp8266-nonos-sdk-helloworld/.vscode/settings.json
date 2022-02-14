@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "osapi.h": "c",
+    "user_interface.h": "c",
+    "my_func.h": "c"
+  }
+}
