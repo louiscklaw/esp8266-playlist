@@ -1,0 +1,2 @@
+ssid=abc
+password=123455secret
