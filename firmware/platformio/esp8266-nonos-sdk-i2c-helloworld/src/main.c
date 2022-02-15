@@ -11,6 +11,8 @@
 #include "driver/i2c_master.h"
 
 static os_timer_t ptimer;
+static os_timer_t ptimer_i2c_tx;
+static os_timer_t ptimer_i2c_rx;
 
 bool beginTransmission(uint8_t i2c_addr);
 void endTransmission();
@@ -24,6 +26,7 @@ void getRawData();
 
 uint16 us_SECOND_ONE = 1000 * 1000 * 1;
 
+
 void blink(void *arg)
 {
   static uint8_t state = 0;
@@ -34,24 +37,11 @@ void blink(void *arg)
     GPIO_OUTPUT_SET(2, 0);
   }
   state ^= 1;
+}
 
-
-    char ascii_str[] = "Hello Arduino!";
-    int len = strlen(ascii_str);
-
-    beginTransmission(0x08);
-
-    for(int i = 0; i < len ; i++)
-    {
-        int a_as_int = (int)ascii_str[i];
-        write(a_as_int);
-    }
-
-    endTransmission();
-    os_delay_us(100);
-
+void receiveI2C(void *arg)
+{
     int8_t packets[13] = {64,2,0,0,0,0,0,0,0,0,0,0,0};
-    
 
     requestFrom(0x08);
     os_delay_us(1000);
@@ -67,6 +57,23 @@ void blink(void *arg)
 
 }
 
+void sendHelloArduino(void *arg)
+{
+    char ascii_str[] = "Hello Arduino!";
+    int len = strlen(ascii_str);
+
+    beginTransmission(0x08);
+
+    for(int i = 0; i < len ; i++)
+    {
+        int a_as_int = (int)ascii_str[i];
+        write(a_as_int);
+    }
+
+    endTransmission();
+    os_delay_us(100);
+
+}
 
 bool requestFrom(uint8_t i2c_addr)
 {
@@ -89,16 +96,27 @@ void ICACHE_FLASH_ATTR user_init(void)
 
     gpio_init();
 
+    // uart_div_modify(0, UART_CLK_FREQ/115200);
+    i2c_master_gpio_init();
+    i2c_master_init();
+    os_delay_us(1000);
+
+    os_printf("init done\n" );
+
     PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);
 
     os_timer_disarm(&ptimer);
     os_timer_setfn(&ptimer, (os_timer_func_t *)blink, NULL);
     os_timer_arm(&ptimer, 1000, 1);
 
-    // uart_div_modify(0, UART_CLK_FREQ/115200);
-    i2c_master_gpio_init();
-    i2c_master_init();
-    os_delay_us(100000);
+    os_timer_disarm(&ptimer_i2c_tx);
+    os_timer_setfn(&ptimer_i2c_tx, (os_timer_func_t *)sendHelloArduino, NULL);
+    os_timer_arm(&ptimer_i2c_tx, 100, 1);
+
+
+    os_timer_disarm(&ptimer_i2c_rx);
+    os_timer_setfn(&ptimer_i2c_rx, (os_timer_func_t *)receiveI2C, NULL);
+    os_timer_arm(&ptimer_i2c_rx, 100, 1);
 
 }
 
