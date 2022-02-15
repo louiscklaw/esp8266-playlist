@@ -66,7 +66,7 @@ void ICACHE_FLASH_ATTR user_init(void)
 
     gpio_init();
 
-    uart_init(9600, 9600);
+    uart_init(76800, 9600);
     os_printf("SDK version:%s\n", system_get_sdk_version());
 
     // Disable WiFi
