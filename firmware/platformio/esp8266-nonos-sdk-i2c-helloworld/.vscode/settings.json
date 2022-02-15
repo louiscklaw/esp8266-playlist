@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "osapi.h": "c",
+    "user_interface.h": "c",
+    "my_func.h": "c",
+    "i2c_master.h": "c",
+    "foo.h": "c",
+    "os_type.h": "c",
+    "user_config.h": "c"
+  }
+}
